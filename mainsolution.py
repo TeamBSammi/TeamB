@@ -8,8 +8,8 @@ print(response)
 data = response.json()
 print(data)
 
-file_path = Path.cwd()/"mainsolution.py"
-file_path2 = Path.cwd()/"mainsolution.py"/"currencyexchangerate.txt"
+file_path = Path.cwd()/"TeamB"
+file_path2 = Path.cwd()/"TeamB"/"currencyexchangerate.txt"
 file_path2.touch()
 print(file_path2.exists())
 
