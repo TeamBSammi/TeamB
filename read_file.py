@@ -8,4 +8,5 @@ for file in file_cohpath.glob("*.txt"):
     with file.open(mode = "r", encoding = "utf-8",) as fileread:
 
         csvreader = csv.reader(fileread)
-        print(csvreader)
+        
+print(csvreader)
