@@ -31,3 +31,4 @@ for day,number in enumerate(difference,45):
     if number < 0:
         #to print the data and turn the negative cash on hand number to positive
         print(f"[CASH DEFICT] DAY {day}, AMOUNT : SGD{abs(number)}")
+
