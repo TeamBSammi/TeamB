@@ -35,4 +35,11 @@ for day,number in enumerate(difference,45):
         #to print the data and turn the negative cash on hand number to positive
         print(f"[CASH SURPLUS] US${abs(number)} on day {day}")
 
+#file_path = Path.cwd()/"pfb_ind_assign2"
+#file_csv = Path.cwd()/"pfb_ind_assign2"/"tenancy.csv"
+#file_csv.touch()
 
+#with file_csv.open(mode = "w",newline = "") as file:
+#    header = ["ADDRESS", "FLAT", "START DATE", "END DATE", "RENTAL"]
+#    writer = csv.writer(file)
+#    writer.writerow (header)
