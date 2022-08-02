@@ -26,19 +26,10 @@ for number in range(0,5):
     #the formula to calculate the difference of the cash on hand integers
     difference.append(int(coh[coh1])-(int(coh[coh2])))
 
-#for day,number in enumerate(difference,45):
-#    #this formula is for when the number captured is negative after the difference is caluclated to be used
-#    if number < 0:
-#        #to print the data and turn the negative cash on hand number to positive
-#        print(f"[CASH DEFICT] US${abs(number)} on day {day}")
-#    else:
-#        #to print the data and turn the negative cash on hand number to positive
-#        print(f"[CASH SURPLUS] Cash-on-hand on each period is higher than the previous period ")
+txtfile = Path.cwd()/"summary_report.txt"
+txtfile.touch()
 
-file_csv = Path.cwd()/"summary_report.txt"
-file_csv.touch()
-
-with file_csv.open(mode = "w",newline = "") as file:
+with txtfile.open(mode = "w",newline = "") as file:
     for day,number in enumerate(difference,45):
         writer = csv.writer(file)
     #this formula is for when the number captured is negative after the difference is caluclated to be used
