@@ -35,20 +35,17 @@ for day,number in enumerate(difference,45):
 # reading of overheads
 
 
-file_opath = Path.cwd()/"csv_reports"/"overheads-day-90.csv"
+file_opath = Path.cwd()/"csv_reports"/"overheads-day-40.csv"
 with file_opath.open(mode = "r", encoding = "utf-8") as fileread:
     csvreadero= csv.reader(fileread)
     next(csvreadero)
-    
-    category,overheads = [], []
+    category = []
+    overheads = []
     amount = []
     for amount in csvreadero:
-        print (amount[0])
         category.append(amount[0])
         overheads.append(amount[1])
         maxoverheads= max(overheads)
-print (category)
-print (overheads)
-print (maxoverheads)
+
 print (amount)
-print (max(amount))
+print(f"[HIGHEST OVERHEADS] {amount}")
