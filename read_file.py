@@ -39,13 +39,18 @@ file_opath = Path.cwd()/"csv_reports"/"overheads-day-40.csv"
 with file_opath.open(mode = "r", encoding = "utf-8") as fileread:
     csvreadero= csv.reader(fileread)
     next(csvreadero)
+    
     category = []
     overheads = []
     amount = []
     for amount in csvreadero:
         category.append(amount[0])
         overheads.append(amount[1])
-        maxoverheads= max(overheads)
+        cat= max(amount)
+        # maxoverheads= max(overheads)
+        for maxover in amount:
+            maximu = (max(overheads))
 
-print (amount)
-print(f"[HIGHEST OVERHEADS] {amount}")
+print(f"[HIGHEST OVERHEADS] {cat}: {maxover}")
+
+
