@@ -32,3 +32,23 @@ for day,number in enumerate(difference,45):
         #to print the data and turn the negative cash on hand number to positive
         print(f"[CASH DEFICT] DAY {day}, AMOUNT : SGD{abs(number)}")
 
+# reading of overheads
+
+
+file_opath = Path.cwd()/"csv_reports"/"overheads-day-90.csv"
+with file_opath.open(mode = "r", encoding = "utf-8") as fileread:
+    csvreadero= csv.reader(fileread)
+    next(csvreadero)
+    
+    category,overheads = [], []
+    amount = []
+    for amount in csvreadero:
+        print (amount[0])
+        category.append(amount[0])
+        overheads.append(amount[1])
+        maxoverheads= max(overheads)
+print (category)
+print (overheads)
+print (maxoverheads)
+print (amount)
+print (max(amount))
