@@ -8,8 +8,8 @@ response = requests.get(url)
 data = response.json()
 print(data)
 
-file_path = Path.cwd()/"csv_reports"
-file_path2 = Path.cwd()/"csv_reports"/"summary_report.txt"
+#file_path = Path.cwd()/"TeamB"
+file_path2 = Path.cwd()/"TeamB"/"summary_report.txt"
 file_path2.touch()
 print(file_path2.exists())
 
