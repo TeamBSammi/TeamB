@@ -14,7 +14,7 @@ with file_palpath.open(mode = "r", encoding = "utf-8") as filepal:
     
     for values in csvreaderpal:
         day.append(values[0])
-        profit.append(values[1])
+        profit.append(values[4])
 pal1 = 0
 pal2 = -1
 diff = []
@@ -26,17 +26,14 @@ for number in range(0,5):
     diff.append(int(profit[pal1])-(int(profit[pal2])))
 
 print(diff)
-for day,amount in enumerate(diff,45):
-    
-    if number < 0:
-        print(f"[PROFIT DEFICT] DAY {day}, AMOUNT : SGD{abs(number)}")
-    else:
-        print(f"[PROFIT] DAY {day}, AMOUNT : SGD{abs(number)}")
+
+txtfile = Path.cwd()/"summary_report.txt"
+txtfile.touch()
+
+with txtfile.open(mode = "w",newline = "") as file:
+    for day,number in enumerate(diff,45):
+        writer = csv.writer(file)
+        if number < 0:
+            writer.writerow(f"[PROFIT DEFICT] DAY {day}, AMOUNT : USD{abs(number)}")
 
 
-
-
-
-   # profit45=re.findall(pattern=r"45.+",string=read)
-  #  day45=[0][0:1].rstrip()
-  #  print(day45)
