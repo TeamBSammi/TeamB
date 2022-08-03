@@ -11,7 +11,7 @@ fp = Path.cwd()/'summary_report.txt'
 
 def api_function():
     for item in data.values():
-        forex = (item["5. Exchange Rate"])
+        forex = (data['Realtime Currency Exchange Rate']["5. Exchange Rate"])
         forex = float(forex)
     if fp.exists():
         with fp.open(mode = "w",encoding = "utf-8",newline = "") as file:
