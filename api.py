@@ -17,7 +17,7 @@ txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
 with txtfile.open(mode = "w",encoding = "utf-8",newline = "") as file:
-    file.writelines(f"[CURRENCY CONVERSION RATE] US$1 = {rate}")
+    file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] US$1 = {rate}")
 
 
 
