@@ -1,6 +1,6 @@
 from pathlib import Path
 import re, csv
-from api import apirate
+from api import api_function
 
 
 file_cohpath = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv"
@@ -28,7 +28,7 @@ for number in range(0,5):
 with txtfile.open(mode = "w",newline = "") as file:
     for day,number in enumerate(difference,45):
         if number < 0:
-            file.writelines(f"[CASH DEFICT] US${(abs(number)*apirate)} on day {day}\n")
+            file.writelines(f"[CASH DEFICT] US${(abs(number)*api_function)} on day {day}\n")
         elif not number < 0:
             file.writelines(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
 
