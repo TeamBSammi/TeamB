@@ -39,8 +39,5 @@ with txtfile.open(mode = "w",newline = "") as file:
         #else:
         #    writer.writerow(f"[CASH SURPLUS] Cash-on-hand on each period is higher than the previous period ")
 
-    #header = ["ADDRESS", "FLAT", "START DATE", "END DATE", "RENTAL"]
-    #writer = csv.writer(file)
-    #writer.writerow (header)
 
 
