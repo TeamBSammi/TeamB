@@ -1,8 +1,7 @@
 # importing each files as modules to coordinate & execute functions
 import api
-import cash_on_hand
-import overheads
-import profit_and_loss
+import read_file
+import write_file
 
 # creating all functions for each modules in the main file
 def main():
