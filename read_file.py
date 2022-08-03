@@ -24,11 +24,11 @@ for number in range(0,5):
 txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
-with txtfile.open(mode = "w",newline = "") as file:
-    for day,number in enumerate(difference,45):
-        writer = csv.writer(file)
-        if number < 0:
-            writer.writerow(f"[CASH DEFICT] US${abs(number)} on day {day}")
+#with txtfile.open(mode = "w",newline = "") as file:
+#    for day,number in enumerate(difference,45):
+#        writer = csv.writer(file)
+#        if number < 0:
+#            writer.writerow(f"[CASH DEFICT] US${abs(number)} on day {day}")
         #else:
         #    writer.writerow(f"[CASH SURPLUS] Cash-on-hand on each period is higher than the previous period ")
 
@@ -67,15 +67,15 @@ print(diff)
 txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
-with txtfile.open(mode = "w",newline = "") as file:
-    for day,number in enumerate(diff,45):
-        writer = csv.writer(file)
-        if number < 0:
-            writer.writerow(f"[PROFIT DEFICT] US${abs(number)} on day {day}")
+#with txtfile.open(mode = "w",newline = "") as file:
+#    for day,number in enumerate(diff,45):
+#        writer = csv.writer(file)
+#        if number < 0:
+#            writer.writerow(f"[PROFIT DEFICT] US${abs(number)} on day {day}")
 
 
 
-# reading of overheads
+#reading of overheads
 file_opath = Path.cwd()/"csv_reports"/"overheads-day-40.csv"
 with file_opath.open(mode = "r", encoding = "utf-8") as fileread:
     csvreadero= csv.reader(fileread)
@@ -94,4 +94,15 @@ with file_opath.open(mode = "r", encoding = "utf-8") as fileread:
 
 print(f"[HIGHEST OVERHEADS] {cat}: {maxover}")
 
+txtfile = Path.cwd()/"summary_report.txt"
+txtfile.touch()
 
+with txtfile.open(mode = "w",newline = "") as file:
+    for day,number in enumerate(difference,45):
+        writer = csv.writer(file)
+        if number < 0:
+            writer.writerow(f"[CASH DEFICT] US${abs(number)} on day {day}")
+    for day,number in enumerate(diff,45):
+        writer = csv.writer(file)
+        if number < 0:
+            writer.writerow(f"[PROFIT DEFICT] US${abs(number)} on day {day}")
