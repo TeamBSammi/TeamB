@@ -3,7 +3,8 @@ import requests
 from pathlib import Path
 import re, csv
 
-url = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey=RRIW0YM0PRPMKD9Q'
+apikey = 'RRIW0YM0PRPMKD9Q'
+url = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey={apikey}}'
 response = requests.get(url)
 data = response.json()
 fp = Path.cwd()/'summary_report.txt'
