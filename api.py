@@ -6,18 +6,17 @@ import re, csv
 url = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey=RRIW0YM0PRPMKD9Q'
 response = requests.get(url)
 data = response.json()
-print(data)
 
 for item in data.values():
     rate = (item["5. Exchange Rate"])
 
-print(rate)
+apirate = float(rate)
 
-txtfile = Path.cwd()/"summary_report.txt"
-txtfile.touch()
+#txtfile = Path.cwd()/"summary_report.txt"
+#txtfile.touch()
 
-with txtfile.open(mode = "w",encoding = "utf-8",newline = "") as file:
-    file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] US$1 = {rate}")
+#with txtfile.open(mode = "w",encoding = "utf-8",newline = "") as file:
+#    file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] US$1 = {rate}")
 
 
 

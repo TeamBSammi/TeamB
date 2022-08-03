@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-[,C,A,S,H, ,D,E,F,I,C,T,], ,U,S,$,6,0,2,3,6, ,o,n, ,d,a,y, ,4,6
-[,C,A,S,H, ,D,E,F,I,C,T,], ,U,S,$,1,8,6,4,8,3,7, ,o,n, ,d,a,y, ,4,8
-[,C,A,S,H, ,D,E,F,I,C,T,], ,U,S,$,5,2,4,2,2,1, ,o,n, ,d,a,y, ,4,9
-[,P,R,O,F,I,T, ,D,E,F,I,C,T,], ,U,S,$,1,9,3,6,4,9, ,o,n, ,d,a,y, ,4,8
-=======
-[REAL TIME CURRENCY CONVERSION RATE] US$1 = 1.38055000
->>>>>>> 383474a2cd212480acd8db9a3233dde2d9da455d
+[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY
+[CASH DEFICT] US$83116.6446 on day 46
+[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY
+[CASH DEFICT] US$2573195.33445 on day 48
+[CASH DEFICT] US$723346.34685 on day 49
