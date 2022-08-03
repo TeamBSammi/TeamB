@@ -17,7 +17,7 @@ txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
 with txtfile.open(mode = "w",encoding = "utf-8",newline = "") as file:
-    writer = csv.writer(file), 
+    writer = csv.writer(file)
     writer.writerow(f"[CURRENCY CONVERSION RATE] US$1 = {rate}")
 
 
