@@ -59,6 +59,8 @@ with txtfile.open(mode = "w",newline = "") as file:
         writer = csv.writer(file)
         if number < 0:
             writer.writerow(f"[CASH DEFICT] US${abs(number)} on day {day}")
+        else:
+            writer.writerow(f"Lalala")
     for day,number in enumerate(diff,45):
         writer = csv.writer(file)
         if number < 0:
