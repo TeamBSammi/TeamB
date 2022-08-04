@@ -8,10 +8,8 @@ def main():
     # setting filepath
     fp = Path.cwd()/'summary_report.txt'
     fp.touch()
-
     # functions in each modules
     # forex - real time exchange rate
-
     # retrieve forex with .forex from api
     forex = api.forex
     # opening a file using 'with' and 'open' keyword in 'write' mode
