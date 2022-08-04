@@ -18,16 +18,14 @@ def overheads_function(forex):
             category.append([0])
             overheads.append([1])
             cat= max(values)
-            # maxoverheads= max(overheads)
             amount=[]
             for num in amount:
                 amount.append(overheads_function(forex))
                 maximum = (max(overheads))
                 cat= max(values)
-                # lines= (f"[HIGHEST OVERHEADS] {cat}: {maxover}")
                 
     with txtfile.open(mode = "w",newline = "") as fileo:
-            for category, overheads in overheads:
+            for num in overheads:
                 fileo.writelines(f"[HIGHEST OVERHEADS] {cat}: {maximum}")
         
         
