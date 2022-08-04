@@ -7,18 +7,6 @@ file_opath = Path.cwd()/"csv_reports"/"overheads-day-40.csv"
 txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
-# with file_opath.open(mode="r",encoding = "utf-8") as fileread:
-#     csvreadero=csv.reader(fileread)
-#     next(csvreadero)
-#     category = []
-#     overheads = []
-#     for values in csvreadero:
-#         category.append(values[0])
-#         overheads.append(values[1]) 
-
-# for x in range(0, len(overheads)):
-#     overheads[x] = float(overheads[x])
-
 def overheads_function(forex):
     with file_opath.open(mode="r",encoding = "utf-8") as fileread:
         csvreadero=csv.reader(fileread)
