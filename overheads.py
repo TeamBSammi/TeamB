@@ -27,9 +27,9 @@ def overheads_function():
     #         for num in overheads:
     #             fileo.writelines(f"[HIGHEST OVERHEADS] {cat}: {maximum}")
                 
-    with txtfile.open(mode = "w",newline = "") as file:
-        for num in overheads: 
-             file.writelines(f"[HIGHEST OVERHEADS] {cat}: {(abs(maximum)*forex)}")
+            with txtfile.open(mode = "w",newline = "") as file:
+                for num in overheads: 
+                    file.writelines(f"[HIGHEST OVERHEADS] {cat}: SGD{(abs(maximum)*forex)}")
 
 overheads_function()  
         
