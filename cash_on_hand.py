@@ -1,12 +1,11 @@
 from pathlib import Path
 import re, csv
-from api import forex
 
 file_cohpath = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv"
 txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
-def cash_on_hand_function():
+def cash_on_hand_function(forex):
     with file_cohpath.open(mode = "r", encoding = "utf-8") as fileread:
         csvreader = csv.reader(fileread)
         next(csvreader)
@@ -23,7 +22,7 @@ def cash_on_hand_function():
         coh2 += 1
         difference.append((float(coh[coh1])-(float(coh[coh2]))))
     print(difference)
-    with txtfile.open(mode = "w",newline = "") as file:
+    with txtfile.open(mode = "a",newline = "") as file:
         for day,number in enumerate(difference,45):
             if number < 0:
                 file.writelines(f"[CASH DEFICT] US${(abs(number)*forex)} on day {day}\n")
@@ -31,5 +30,3 @@ def cash_on_hand_function():
                 if min(difference) > 0:
                     file.writelines(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
                     break
-
-cash_on_hand_function()
