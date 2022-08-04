@@ -29,4 +29,5 @@ def cash_on_hand_function(forex):
             else:
                 if min(difference) > 0:
                     file.writelines(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-                    break
+
+cash_on_hand_function(forex)

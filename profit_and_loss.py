@@ -6,7 +6,7 @@ file_cohpath = Path.cwd()/"csv_reports"/"profit-and-loss-usd.csv"
 txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
-def profitandloss_function(forex):
+def profit_and_loss_function(forex):
     with file_cohpath.open(mode = "r", encoding = "utf-8") as file1:
         csvreading = csv.reader(file1)
         next(csvreading)
@@ -28,10 +28,10 @@ def profitandloss_function(forex):
     with txtfile.open(mode = "a",newline = "",encoding="utf-8") as file:
         for day,number in enumerate(difference,45):
             if number < 0:
-                file.writelines(f"[PROFTI DEFICT]  DAY: {day}, AMOUNT: {(abs(number)*forex)}\n")
+                file.write(f"[PROFTI DEFICT]  DAY: {day}, AMOUNT: {(abs(number)*forex)}\n")
             else:
                 if min(difference) > 0:
-                    file.writelines(f"[PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
-                    break
+                    file.write(f"[PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
 
+profit_and_loss_function(forex)
 

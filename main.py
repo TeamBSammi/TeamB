@@ -9,8 +9,8 @@ def main():
     forex = api.forex
     with fp.open(mode = "w",newline = "") as file:
         api.api_function()
-        overheads.overheads_function(forex)
+        #overheads.overheads_function(forex)
         cash_on_hand.cash_on_hand_function(forex)
-        profit_and_loss.profitandloss_function(forex)
+        profit_and_loss.profit_and_loss_function(forex)
     
 (main())
