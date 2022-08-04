@@ -26,6 +26,7 @@ def overheads_function(forex):
             category.append(values[0])
             overheads.append(values[1]) 
 
+    #using for loop in a range of the length of values to convert into float
     for x in range(0, len(overheads)):
         overheads[x] = float(overheads[x])
 
