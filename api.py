@@ -12,8 +12,6 @@ for item in data.values():
     forex = float(data['Realtime Currency Exchange Rate']["5. Exchange Rate"])
 
 def api_function():
-    #for item in data.values():
-    #    forex = float(data['Realtime Currency Exchange Rate']["5. Exchange Rate"])
     if fp.exists():
         with fp.open(mode ="a", encoding = "utf-8",newline = "") as file:
             file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] US$1 = {forex}\n")

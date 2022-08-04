@@ -7,7 +7,6 @@ def main():
     fp = Path.cwd()/'summary_report.txt'
     fp.touch()
     forex = api.forex
-    print(forex)
     with fp.open(mode = "w",newline = "") as file:
         api.api_function()
         #overheads.overheads_function(forex)
