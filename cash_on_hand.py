@@ -6,7 +6,7 @@ file_cohpath = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv"
 txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
-def cash_on_hand():
+def cash_on_hand_function():
     with file_cohpath.open(mode = "r", encoding = "utf-8") as fileread:
         csvreader = csv.reader(fileread)
         next(csvreader)
@@ -33,4 +33,4 @@ def cash_on_hand():
                     file.writelines(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
                     break
 
-cash_on_hand()
+cash_on_hand_function()
