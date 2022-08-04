@@ -12,30 +12,34 @@ def overheads_function(forex):
         csvreadero= csv.reader(fileread)
         next(csvreadero)
         
-        category = []
-        overheads = []
+        category= []
+        overheads =[]
         for values in csvreadero:
-            category.append([0])
-            overheads.append([1])
-            cat= max(values)
-            amount=[]
-            for num in amount:
-                maximum = (max(overheads))
-                cat= max(values)
-                
+            category.append((values[0]))
+            overheads.append((values[1])) 
+            # dict_ov = category, overheads
+            # print(dict_ov)
+            # print(category)
+            # over = max(overheads)
+            # cat = max(category)
+            # mini= min (category)
+            # print(category[over])
+        print (values)
+            #maxcat= re.findall(pattern=(over)* , string = csv)
+            # with txtfile.open(mode = "a",newline = "") as file:
+            #     for num in overheads: 
+            #         file.writelines(f"[HIGHEST OVERHEADS] {cat}: SGD ${over*forex})\n")
+            #         break
+#         print (max(category))
+#         print(min(category))
+#         print(f"[HIGHEST OVERHEADS] {mini}: SGD ${over}")
+# overheads_function(forex)            
     # with txtfile.open(mode = "w",newline = "") as fileo:
     #         for num in overheads:
     #             fileo.writelines(f"[HIGHEST OVERHEADS] {cat}: {maximum}")
-                with txtfile.open(mode = "a",newline = "") as file:
-                    for num in overheads: 
-                        file.writelines(f"[HIGHEST OVERHEADS] {cat}: US${(abs(maximum)*forex)}")
-                        break
+                # with txtfile.open(mode = "a",newline = "") as file:
+                #     for num in overheads: 
+                #         file.writelines(f"[HIGHEST OVERHEADS] {cat}: US${(abs(maximum)*forex)}")
+                #         break
 
 overheads_function(forex)
-        
-        # #for loop is used to iterate the elements
-        # for tenant in combine:
-        #     # .append() it is used to add a single item to the list 
-        #     empty.append(tenant)
-        #     # Use .writerow() to write single line and iterate over a for loop.
-        #     writer.writerow(tenant)
