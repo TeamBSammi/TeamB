@@ -20,11 +20,11 @@ for item in data.values():
 
 # defining a function named api_function()
 def api_function():
-    # continue running if file path exists
+    # continue running code if file path exists
     if fp.exists():
-        # opening a new file and append in it
+        # opening a new file with 'with' and 'open' keywords in 'append' mode
         with fp.open(mode ="a", encoding = "utf-8",newline = "") as file:
-            # writing line with forex data
+            # writing line with forex data in file
             file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] US$1 = {forex}\n")
 
 api_function()
