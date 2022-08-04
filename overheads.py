@@ -39,6 +39,6 @@ def overheads_function(forex):
             #max is used to extract the highest value in the 'overheads' list
             if values == max(overheads):
                 #writing of code,use of .upper() to uppercase all the letters, multiplying forex data from api to overheads amount to convert to SGD from USD
-                file.writelines(f"[HIGHEST OVERHEADS] {(category[expense]).upper()}: SGD ${round((float(values)*forex),2)}\n")
+                file.writelines(f"[HIGHEST OVERHEADS] {(category[expense]).upper()}: SGD{round((float(values)*forex),2)}\n")
 
 overheads_function(forex)
