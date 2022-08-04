@@ -31,7 +31,7 @@ def overheads_function(forex):
         overheads[x] = float(overheads[x])
 
     #writing of the data extracted into the txt file 
-    with txtfile.open(mode = "a",newline = " ") as file:
+    with txtfile.open(mode = "a",newline = "") as file:
         #for loops is used to repeat the block of codes
         #enumerate() method adds a counter to the iterable and returns it 
         for expense,values in enumerate(overheads):
