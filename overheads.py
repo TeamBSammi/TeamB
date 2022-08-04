@@ -27,7 +27,7 @@ def overheads_function(forex):
     with txtfile.open(mode = "w",newline = "") as fileo:
             for num in overheads:
                 fileo.writelines(f"[HIGHEST OVERHEADS] {cat}: {maximum}")
-        
+                
         
         
         # #for loop is used to iterate the elements
