@@ -1,5 +1,6 @@
 from pathlib import Path
 import re, csv
+from api import forex
 
 file_cohpath = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv"
 txtfile = Path.cwd()/"summary_report.txt"
@@ -30,3 +31,5 @@ def cash_on_hand_function(forex):
                 if min(difference) > 0:
                     file.writelines(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
                     break
+
+cash_on_hand_function(forex)
