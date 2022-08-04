@@ -1,5 +1,6 @@
 from pathlib import Path
 import re, csv
+from api import forex
 
 file_cohpath = Path.cwd()/"csv_reports"/"profit-and-loss-usd.csv"
 txtfile = Path.cwd()/"summary_report.txt"
@@ -13,7 +14,7 @@ def profitandloss_function(forex):
         profitandloss = []
         for values in csvreading:
             days.append(values[0])
-            profitandloss.append(values[1])
+            profitandloss.append(values[4])
         
     profitandloss1 = 0
     profitandloss2 = -1
@@ -24,13 +25,14 @@ def profitandloss_function(forex):
         profitandloss2 += 1
         difference.append((float(profitandloss[profitandloss1])-(float(profitandloss[profitandloss2]))))
 
-    with txtfile.open(mode = "w",newline = "") as file:
+    with txtfile.open(mode = "w",newline = "",encoding="utf-8") as file:
         for day,number in enumerate(difference,45):
             if number < 0:
                 file.writelines(f"[PROFTI DEFICT] SGD${(abs(number)*forex)} on day {day}\n")
             elif not number < 0:
                 file.writelines(f"[PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
 
+print(profitandloss_function(forex))
 
 # file_palpath = Path.cwd()/"csv_reports"/"profit-and-loss-usd.csv"
 # fp = Path.cwd()/'summary_report.txt'
