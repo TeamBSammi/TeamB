@@ -1,6 +1,6 @@
 from pathlib import Path
 import re, csv
-from api import api_function
+from api import forex
 
 file_cohpath = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv"
 txtfile = Path.cwd()/"summary_report.txt"
@@ -23,7 +23,7 @@ def cash_on_hand_function():
         coh2 += 1
         difference.append((float(coh[coh1])-(float(coh[coh2]))))
     print(difference)
-    print(api.forex)
+    print(forex)
     with txtfile.open(mode = "w",newline = "") as file:
         for day,number in enumerate(difference,45):
             if number < 0:
