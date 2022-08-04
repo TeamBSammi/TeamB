@@ -7,7 +7,7 @@ file_opath = Path.cwd()/"csv_reports"/"overheads-day-40.csv"
 txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
-def overheads_function():
+def overheads_function(forex):
     with file_opath.open(mode = "r", encoding = "utf-8") as fileread:
         csvreadero= csv.reader(fileread)
         next(csvreadero)
@@ -26,12 +26,12 @@ def overheads_function():
     # with txtfile.open(mode = "w",newline = "") as fileo:
     #         for num in overheads:
     #             fileo.writelines(f"[HIGHEST OVERHEADS] {cat}: {maximum}")
-                
-            with txtfile.open(mode = "w",newline = "") as file:
-                for num in overheads: 
-                    file.writelines(f"[HIGHEST OVERHEADS] {cat}: SGD{(abs(maximum)*forex)}")
+                with txtfile.open(mode = "a",newline = "") as file:
+                    for num in overheads: 
+                        file.writelines(f"[HIGHEST OVERHEADS] {cat}: US${(abs(maximum)*forex)}")
+                        break
 
-overheads_function()  
+overheads_function(forex)
         
         # #for loop is used to iterate the elements
         # for tenant in combine:
