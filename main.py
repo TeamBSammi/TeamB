@@ -17,9 +17,7 @@ def main():
     # opening a file using 'with' and 'open' keyword in 'write' mode
     # and one more parameter 'newline' to remove extra line ending in csv file
     with fp.open(mode = "w",newline = "") as file:
-
         # functions in each module
-
         api.api_function()
         overheads.overheads_function(forex)
         cash_on_hand.cash_on_hand_function(forex)
