@@ -21,7 +21,7 @@ def overheads_function(forex):
     with txtfile.open(mode = "a",newline = "") as file:
         for expense,values in enumerate(overheads):
             if values == max(overheads):
-                file.writelines(f"[HIGHEST OVERHEADS] {category[expense]}: SGD ${float(values)*forex}\n")
+                file.writelines(f"[HIGHEST OVERHEADS] {(category[expense]).upper()}: SGD ${float(values)*forex}\n")
 
 overheads_function(forex)
         # overheads = {}
