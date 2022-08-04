@@ -1,4 +1,3 @@
-
 import requests
 from pathlib import Path
 import re, csv
@@ -14,8 +13,8 @@ for item in data.values():
 
 def api_function():
     if fp.exists():
-        with fp.open(mode ="w", encoding = "utf-8",newline = "") as file:
-            file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] US$1 = {forex}")
+        with fp.open(mode ="a", encoding = "utf-8",newline = "") as file:
+            file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] US$1 = {forex}\n")
 
 api_function()
 
