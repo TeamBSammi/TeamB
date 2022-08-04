@@ -25,14 +25,16 @@ def profitandloss_function(forex):
         profitandloss2 += 1
         difference.append((float(profitandloss[profitandloss1])-(float(profitandloss[profitandloss2]))))
 
-    with txtfile.open(mode = "w",newline = "",encoding="utf-8") as file:
+    with txtfile.open(mode = "a",newline = "",encoding="utf-8") as file:
         for day,number in enumerate(difference,45):
             if number < 0:
                 file.writelines(f"[PROFTI DEFICT] SGD${(abs(number)*forex)} on day {day}\n")
             elif not number < 0:
                 file.writelines(f"[PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
+                break
 
-print(profitandloss_function(forex))
+
+profitandloss_function(forex)
 
 # file_palpath = Path.cwd()/"csv_reports"/"profit-and-loss-usd.csv"
 # fp = Path.cwd()/'summary_report.txt'
