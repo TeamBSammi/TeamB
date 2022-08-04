@@ -14,9 +14,10 @@ with file_opath.open(mode="r",encoding = "utf-8") as fileread:
     overheads = []
     for values in csvreadero:
         category.append(values[0])
-        overheads.append(values[1])  
-    over = max(overheads)
-    print(over)
+        overheads.append(values[1]) 
+
+over = max(overheads)
+print(type(overheads))
 
 def overheads_function(forex):
     with txtfile.open(mode = "a",newline = "") as file:
