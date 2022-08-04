@@ -1,5 +1,7 @@
 from pathlib import Path
 import re, csv
+from sre_constants import CATEGORY
+from unicodedata import category
 from api import forex
 
 #reading of overheads
@@ -7,16 +9,44 @@ file_opath = Path.cwd()/"csv_reports"/"overheads-day-40.csv"
 txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
-def overheads_function(forex):
+def overheads_function():
     with file_opath.open(mode = "r", encoding = "utf-8") as fileread:
         csvreadero= csv.reader(fileread)
         next(csvreadero)
         
-        category= []
-        overheads =[]
+        # overheads = {}
+        # category  =[]
+        # for values in csvreadero:
+        #     o = float(values[1])
+        #     percentage.append(o)
+        #     cate = values[0]
+        #     overheads[o]= cate
+        #     maxover= max(percentage)
+        #     maxcat= overheads[maxover]
+        #     message = (f"[HIGHEST OVERHEADS] {maxcat}: SGD ${maxover*forex})\n")
+        #     return message 
+# print(overheads_function())
+#         overheads = {}
+#         category = []
+#         for numb in csvreadero: 
+#             amount= float(numb[1])
+#             category.append(amount)
+#             cat = numb[0]
+#             overheads[amount]= cat
+#             maxover= max(category)
+#             maxxat= overheads[maxover]
+#             message= f"[HIGHEST OVERHEADS] {maxxat}: SGD {maxover*forex}"
+#             return message 
+# print(overheads_function())            
+
+        category = []
+        overheads = []
         for values in csvreadero:
-            category.append((values[0]))
-            overheads.append((values[1])) 
+            category.append(values[0])
+            overheads.append(values[1])        
+            over = max(overheads)
+            cat = max(category)
+    print(values)
             # dict_ov = category, overheads
             # print(dict_ov)
             # print(category)
@@ -24,7 +54,7 @@ def overheads_function(forex):
             # cat = max(category)
             # mini= min (category)
             # print(category[over])
-        print (values)
+        
             #maxcat= re.findall(pattern=(over)* , string = csv)
             # with txtfile.open(mode = "a",newline = "") as file:
             #     for num in overheads: 
@@ -42,4 +72,4 @@ def overheads_function(forex):
                 #         file.writelines(f"[HIGHEST OVERHEADS] {cat}: US${(abs(maximum)*forex)}")
                 #         break
 
-overheads_function(forex)
+
