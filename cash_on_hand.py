@@ -1,6 +1,6 @@
 from pathlib import Path
 import re, csv
-from api import apirate
+from api import forex
 
 file_cohpath = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv"
 txtfile = Path.cwd()/"summary_report.txt"
@@ -23,11 +23,11 @@ def cash_on_hand_function():
         coh2 += 1
         difference.append((float(coh[coh1])-(float(coh[coh2]))))
     print(difference)
-    print(apirate)
+    print(forex)
     with txtfile.open(mode = "w",newline = "") as file:
         for day,number in enumerate(difference,45):
             if number < 0:
-                file.writelines(f"[CASH DEFICT] US${(abs(number)*apirate)} on day {day}\n")
+                file.writelines(f"[CASH DEFICT] US${(abs(number)*forex)} on day {day}\n")
             else:
                 if min(difference) > 0:
                     file.writelines(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
