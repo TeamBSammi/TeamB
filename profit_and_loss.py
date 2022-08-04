@@ -56,6 +56,7 @@ def profit_and_loss_function(forex):
                 if min(difference) > 0:
                     #show if amount is more than o
                     file.write(f"[PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
+                    break
 
 profit_and_loss_function(forex)
 
