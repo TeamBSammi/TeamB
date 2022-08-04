@@ -1,7 +1,5 @@
 from pathlib import Path
 import re, csv
-from sre_constants import CATEGORY
-from unicodedata import category
 from api import forex
 
 #reading of overheads
@@ -9,11 +7,23 @@ file_opath = Path.cwd()/"csv_reports"/"overheads-day-40.csv"
 txtfile = Path.cwd()/"summary_report.txt"
 txtfile.touch()
 
-def overheads_function():
-    with file_opath.open(mode = "r", encoding = "utf-8") as fileread:
-        csvreadero= csv.reader(fileread)
-        next(csvreadero)
-        
+with file_opath.open(mode="r",encoding = "utf-8") as fileread:
+    csvreadero=csv.reader(fileread)
+    next(csvreadero)
+    category = []
+    overheads = []
+    for values in csvreadero:
+        category.append(values[0])
+        overheads.append(values[1])        
+        over = max(overheads)
+
+def overheads_function(forex):
+    with txtfile.open(mode = "a",newline = "") as file:
+        for expense,value in enumerate(overheads):
+            if value == max(overheads):
+                file.writelines(f"[HIGHEST OVERHEADS {category[expense]}: SGD ${float(value)*forex}")
+
+overheads_function(forex)
         # overheads = {}
         # category  =[]
         # for values in csvreadero:
@@ -39,14 +49,14 @@ def overheads_function():
 #             return message 
 # print(overheads_function())            
 
-        category = []
-        overheads = []
-        for values in csvreadero:
-            category.append(values[0])
-            overheads.append(values[1])        
-            over = max(overheads)
-            cat = max(category)
-    print(values)
+    #     category = []
+    #     overheads = []
+    #     for values in csvreadero:
+    #         category.append(values[0])
+    #         overheads.append(values[1])        
+    #         over = max(overheads)
+    #         cat = max(category)
+    # print(values)
             # dict_ov = category, overheads
             # print(dict_ov)
             # print(category)
