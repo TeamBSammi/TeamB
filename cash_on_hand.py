@@ -23,7 +23,6 @@ def cash_on_hand_function():
         coh2 += 1
         difference.append((float(coh[coh1])-(float(coh[coh2]))))
     print(difference)
-    print(forex)
     with txtfile.open(mode = "w",newline = "") as file:
         for day,number in enumerate(difference,45):
             if number < 0:
