@@ -49,7 +49,7 @@ def profit_and_loss_function(forex):
             # use if function and when the number is less than 0 what will happen
             if number < 0:
                 # write  the day and amount
-                file.write(f"[PROFIT DEFICIT]  DAY: {day}, AMOUNT: SGD{round((abs(number)*forex),2)}\n")
+                file.write(f"[PROFIT DEFICIT]  DAY: {float(day)}, AMOUNT: SGD{round((abs(number)*forex),2)}\n")
                 # use else function 
             else:
                 # if the amount is more than 0 

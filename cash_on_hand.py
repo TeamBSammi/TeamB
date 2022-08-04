@@ -37,7 +37,7 @@ def cash_on_hand_function(forex):
         for day,number in enumerate(difference,45):
             #as a deficit dumber contains "-", creating a if function to define whether in all the datas there are any deficit
             if number < 0:
-                file.writelines(f"[CASH DEFICIT] DAY: {day}, AMOUNT: SGD{round((abs(number)*forex),2)}\n")
+                file.writelines(f"[CASH DEFICIT] DAY: {float(day)}, AMOUNT: SGD{round((abs(number)*forex),2)}\n")
             #as deficit is 
             else:
                 #using if function to check if the lowest number in difference is more than 0 in order to prevent it from spawning with cash deficit
