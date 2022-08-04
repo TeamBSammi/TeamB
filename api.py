@@ -25,6 +25,6 @@ def api_function():
         # opening a new file with 'with' and 'open' keywords in 'append' mode
         with fp.open(mode ="a", encoding = "utf-8",newline = "") as file:
             # writing line with forex data in file
-            file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] US$1 = {forex}\n")
+            file.writelines(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = SGD{forex}\n")
 
 api_function()
