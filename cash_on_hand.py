@@ -25,9 +25,8 @@ def cash_on_hand_function(forex):
     with txtfile.open(mode = "a",newline = "") as file:
         for day,number in enumerate(difference,45):
             if number < 0:
-                file.writelines(f"[CASH DEFICT] US${(abs(number)*forex)} on day {day}\n")
+                file.writelines(f"[CASH DEFICT] DAY: {day}, AMOUNT: {(abs(number)*forex)}\n")
             else:
                 if min(difference) > 0:
                     file.writelines(f"[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
-
-cash_on_hand_function(forex)
+                    break

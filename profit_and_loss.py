@@ -29,9 +29,9 @@ def profitandloss_function(forex):
         for day,number in enumerate(difference,45):
             if number < 0:
                 file.writelines(f"[PROFTI DEFICT]  DAY: {day}, AMOUNT: {(abs(number)*forex)}\n")
-            elif not number < 0:
-                file.writelines(f"[PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
-                break
+            else:
+                if min(difference) > 0:
+                    file.writelines(f"[PROFIT SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
+                    break
 
 
-profitandloss_function(forex)
