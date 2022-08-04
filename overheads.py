@@ -15,7 +15,7 @@ def overheads_function(forex):
         overheads = []
         for values in csvreadero:
             category.append(values[0])
-            overheads.append(values[1]) 
+            overheads.append(values[1])
     for x in range(0, len(overheads)):
         overheads[x] = float(overheads[x])
     with txtfile.open(mode = "a",newline = "") as file:
